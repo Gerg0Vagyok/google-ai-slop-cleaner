@@ -13,5 +13,6 @@
       "matches": ["*://*.google.com/search*"],
       "js": ["content.js"]
     }
-  ]
+  ],
+  "license": "MIT"
 }
