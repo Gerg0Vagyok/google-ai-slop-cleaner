@@ -1,0 +1,17 @@
+{
+  "manifest_version": 2,
+  "name": "Google AI Slop Cleaner",
+  "description": "Adds specific terms from Google search queries to filter as much AI slop as possible.",
+  "version": "1.0",
+  "permissions": [
+    "tabs",
+    "webNavigation",
+    "storage"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["*://*.google.com/search*"],
+      "js": ["content.js"]
+    }
+  ]
+}
