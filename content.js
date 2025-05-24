@@ -2,19 +2,19 @@
 (function() {
     'use strict';
 
-    const Filters = ' -"stable diffusion" -"open art" -"prompt hunt" -"dall-e" -ai -generate -midjourney -prompt -seed -checkpoint -steps -model -CLIP -CFG -sampling -"sampling method" -masterpiece -4k -8k -wallpaper -lowres -watermark -blurry -signature -karras -euler -site:jigidi.com -site:dreamstime.com before:2024';
-
+    // const Filters = ' -"stable diffusion" -"open art" -"prompt hunt" -"dall-e" -ai -generate -midjourney -prompt -seed -checkpoint -steps -model -CLIP -CFG -sampling -"sampling method" -masterpiece -4k -8k -wallpaper -lowres -watermark -blurry -signature -karras -euler -site:jigidi.com -site:dreamstime.com before:2024';
+    const Filters = ' -"stable diffusion" -"open art" -"prompt hunt" -"dall-e" -ai -generate -midjourney -prompt -seed -checkpoint -steps -model -CLIP -CFG -sampling -"sampling method" -masterpiece -4k -8k -wallpaper -lowres -watermark -blurry -signature -karras -euler -site:jigidi.com -site:dreamstime.com';
+    
     const urlParams = new URLSearchParams(window.location.search);
     let searchQuery = urlParams.get('q');
     if (!searchQuery) return;
 
     searchQuery += Filters;
 
-    // If the query has changed, update the URL without reloading
     if (searchQuery !== urlParams.get('q')) {
         urlParams.set('q', searchQuery);
         const newUrl = window.location.pathname + '?' + urlParams.toString();
-        window.history.replaceState({}, '', newUrl); // Update URL in the browser bar without refreshing
+        window.history.replaceState({}, '', newUrl);
         console.log("Updated URL:", newUrl);
     }
 
